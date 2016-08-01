@@ -12,9 +12,11 @@ Paloma.BeforeCallbackPerformer.prototype = {
   },
 
   _executeCallbacks: function(){
-    for (var i = 0, n = this._callbacks().length; i < n; i++)
-      this._executeCallback( this._callbacks()[i] );
-  },
+    console.log(this._callbacks().length);
+    if (this._callbacks().length) {
+      for (var i = 0, n = this._callbacks().length; i < n; i++)
+        this._executeCallback( this._callbacks()[i] );
+  }},
 
   _executeCallback: function(name){
     var callback = this.controller[name];
@@ -26,13 +28,15 @@ Paloma.BeforeCallbackPerformer.prototype = {
 
     this._callbackList = [];
 
-    for (var i = 0, n = this.entries.length; i < n; i++){
-      var entry = this.entries[i];
+    console.log(this.entries.length);
+    if (this.entries.length) {
+      for (var i = 0, n = this.entries.length; i < n; i++) {
+        var entry = this.entries[i];
 
-      this._callbackList =
-        this._callbackList.concat( this._getCallbacksIfForAction(entry) );
+        this._callbackList =
+            this._callbackList.concat(this._getCallbacksIfForAction(entry));
+      }
     }
-
     return this._callbackList;
   },
 
