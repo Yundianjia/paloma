@@ -3,3 +3,14 @@ Gemfile.lock
 /tmp/*
 /test_app/tmp/*
 /test_app/spec/tmp/*
+
+*.swp
+*.swo
+.ruby-version
+.ruby-gemset
+
+.idea/**
+.idea
+
+.DS_Store
+!.gitkeep
