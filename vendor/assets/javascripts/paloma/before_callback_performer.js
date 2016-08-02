@@ -12,8 +12,8 @@ Paloma.BeforeCallbackPerformer.prototype = {
   },
 
   _executeCallbacks: function(){
-    console.log(this._callbacks().length);
-    if (this._callbacks().length) {
+    //console.log(this._callbacks().length);
+    if (this._callbacks()) {
       for (var i = 0, n = this._callbacks().length; i < n; i++)
         this._executeCallback( this._callbacks()[i] );
   }},
@@ -28,8 +28,8 @@ Paloma.BeforeCallbackPerformer.prototype = {
 
     this._callbackList = [];
 
-    console.log(this.entries.length);
-    if (this.entries.length) {
+    //console.log(this.entries.length);
+    if (this.entries) {
       for (var i = 0, n = this.entries.length; i < n; i++) {
         var entry = this.entries[i];
 
